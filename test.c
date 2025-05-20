@@ -664,7 +664,7 @@ void main()
    */
   i32node *intsec = NULL;
   int intsec_size = 0;
-  instersection_i32_t_set(&set1, &set2, &intsec, &intsec_size);
+  intersection_i32_t_set(&set1, &set2, &intsec, &intsec_size);
 
   view_i32_set(intsec, intsec_size);
   /**
