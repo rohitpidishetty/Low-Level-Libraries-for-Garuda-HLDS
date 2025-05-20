@@ -199,10 +199,10 @@ char *contains_ch8_node(ch8node **root, const char *data)
   while (current != NULL)
   {
     if (strcmp(current->data, data) == 0)
-      return "true";
+      return "True";
     current = current->next;
   }
-  return "false";
+  return "False";
 }
 
 char *get_ch8_node(ch8node **root, int index)
@@ -235,7 +235,7 @@ int index_of_ch8_node(ch8node **root, const char *value)
 
 char *is_empty_ch8_node(int *magnitude)
 {
-  return (*magnitude == 0) ? "true" : "false";
+  return (*magnitude == 0) ? "True" : "False";
 }
 
 void clear_ch8_node(ch8node **root, int *magnitude)
@@ -272,7 +272,7 @@ void reverse_ch8_node(ch8node **root)
 char *equals_ch8_node(ch8node **root_0, ch8node **root_1, int *root_0_mag, int *root_1_mag)
 {
   if (*root_0_mag != *root_1_mag)
-    return "false";
+    return "False";
 
   ch8node *r0 = *root_0;
   ch8node *r1 = *root_1;
@@ -280,10 +280,10 @@ char *equals_ch8_node(ch8node **root_0, ch8node **root_1, int *root_0_mag, int *
   while (r0 != NULL && r1 != NULL)
   {
     if (strcmp(r0->data, r1->data) != 0)
-      return "false";
+      return "False";
     r0 = r0->next;
     r1 = r1->next;
   }
 
-  return "true";
+  return "True";
 }
