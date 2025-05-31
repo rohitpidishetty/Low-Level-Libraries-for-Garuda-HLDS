@@ -496,6 +496,19 @@ int word_check_if_empty(char **word)
   return (*word)[0] == END_OF_STRING ? 1 : 0;
 }
 
+char *stringify_ch8_nodes_ch8_node(ch8node **root)
+{
+  char *buffer = (char *)malloc(2048 * sizeof(char));
+  ch8node *pointer = (*root);
+  buffer[0] = END_OF_STRING;
+  while (pointer != NULL)
+  {
+    strcat(buffer, pointer->data);
+    pointer = pointer->next;
+  }
+  return buffer;
+}
+
 // void main()
 // {
 //   char *name = "rohit s v";
@@ -567,18 +580,6 @@ int word_check_if_empty(char **word)
 //   message = word_replace(&message, &_name, &__name);
 //   printf("%s\n", message);
 
-//   // tokens = message.split()
-//   ch8node *tokens = NULL;
-//   int tokens_size = 0;
-//   word_split(&message, &tokens, &tokens_size);
-//   view_ch8_node(tokens, tokens_size);
-
-//   // charArr = toCharArray()
-//   ch8node *charArr = NULL;
-//   int charArr_size = 0;
-//   word_char_split(&message, &charArr, &charArr_size);
-//   view_ch8_node(charArr, charArr_size);
-
 //   char *delimeter = " ";
 //   // stream2 = delimeter.join(name, name2, message)
 //   char *stream2 = word_binder_with_delimiter(4, "-", "hey", "hello", "how");
@@ -621,6 +622,18 @@ int word_check_if_empty(char **word)
 //   // status = number.isEmpty()
 //   status = word_check_if_empty(&number);
 //   printf("%d\n", status);
+
+//   // tokens = message.split()
+//   ch8node *tokens = NULL;
+//   int tokens_size = 0;
+//   word_split(&message, &tokens, &tokens_size);
+//   view_ch8_node(tokens, tokens_size);
+
+//   // charArr = toCharArray()
+//   ch8node *charArr = NULL;
+//   int charArr_size = 0;
+//   word_char_split(&message, &charArr, &charArr_size);
+//   view_ch8_node(charArr, charArr_size);
 
 //   // encrypt
 //   // decrypt
