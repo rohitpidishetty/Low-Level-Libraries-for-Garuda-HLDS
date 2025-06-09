@@ -62,10 +62,10 @@ void view_ch8_vec(ch8vec *root, int magnitude)
   printf("]\n");
 }
 
-ch8node *get_ch8_vec(ch8vec *root, int index)
+ch8node *get_ch8_vec(ch8vec **root, int index)
 {
   int position = 0;
-  ch8vec *current = root;
+  ch8vec *current = (*root);
 
   while (current != NULL)
   {

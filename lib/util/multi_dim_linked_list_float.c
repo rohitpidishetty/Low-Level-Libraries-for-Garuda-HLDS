@@ -62,10 +62,10 @@ void view_f64_vec(f64vec *root, int magnitude)
   printf("]\n");
 }
 
-f64node *get_f64_vec(f64vec *root, int index)
+f64node *get_f64_vec(f64vec **root, int index)
 {
   int position = 0;
-  f64vec *current = root;
+  f64vec *current = (*root);
 
   while (current != NULL)
   {

@@ -62,10 +62,10 @@ void view_i32_vec(i32vec *root, int magnitude)
   printf("]\n");
 }
 
-i32node *get_i32_vec(i32vec *root, int index)
+i32node *get_i32_vec(i32vec **root, int index)
 {
   int position = 0;
-  i32vec *current = root;
+  i32vec *current = (*root);
 
   while (current != NULL)
   {
