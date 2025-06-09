@@ -19,6 +19,9 @@
 #include "./lib/util/tree_set_float64.c"
 #include "./lib/util/tree_set_string.c"
 #include "./lib/util/string_sub_routines.c"
+#include "./lib/util/multi_dim_linked_list_int.c"
+#include "./lib/util/multi_dim_linked_list_float.c"
+#include "./lib/util/multi_dim_linked_list_string.c"
 
 void main()
 {
@@ -812,4 +815,229 @@ void main()
   // encrypt
   // decrypt
   // codeCrackerAlgo
+
+  i32node *vec1 = NULL;
+  int vec1_size = 0;
+  add_i32_node(&vec1, 1, &vec1_size);
+  add_i32_node(&vec1, 2, &vec1_size);
+  add_i32_node(&vec1, 3, &vec1_size);
+
+  i32node *vec2 = NULL;
+  int vec2_size = 0;
+  add_i32_node(&vec2, 4, &vec2_size);
+  add_i32_node(&vec2, 5, &vec2_size);
+  add_i32_node(&vec2, 6, &vec2_size);
+
+  i32node *vec3 = NULL;
+  int vec3_size = 0;
+  add_i32_node(&vec3, 7, &vec3_size);
+  add_i32_node(&vec3, 8, &vec3_size);
+  add_i32_node(&vec3, 9, &vec3_size);
+  add_i32_node(&vec3, 10, &vec3_size);
+
+  i32node *vec4 = NULL;
+  int vec4_size = 0;
+
+  i32vec *mat = NULL;
+  int mat_size = 0;
+  add_i32_vec(&mat, &vec1, &mat_size);
+  add_i32_vec(&mat, &vec2, &mat_size);
+  add_i32_vec(&mat, &vec3, &mat_size);
+  add_i32_vec(&mat, &vec4, &mat_size);
+
+  // mat.print()
+  view_i32_vec(mat, mat_size);
+
+  // list = mat.get(2)
+  i32node *list = get_i32_vec(mat, 2);
+  // The compiler should know that list is a mul-dim variable, as few functions differ in list using multi-dims.
+
+  // list.print()
+  view_i32_node(list, magnitude_i32_node(&list));
+
+  // list.add(20)
+  int __garbage__ = 0;
+  add_i32_node(&list, 20, &__garbage__);
+
+  // list.get(1)
+  printf("%d\n", get_i32_node(&list, 1));
+
+  // mat.size()
+  printf("%d\n", size_i32_vec(mat_size));
+
+  // mat.insertAt(1, vec4)
+  insert_at_i32_vec(&mat, &vec4, 1, &mat_size);
+
+  // mat.print()
+  view_i32_vec(mat, mat_size);
+
+  // mat.clear()
+  // clear_i32_vec(&mat, &mat_size);
+
+  // mat.print()
+  view_i32_vec(mat, mat_size);
+
+  // mat.pop()
+  pop_i32_vec(&mat, &mat_size);
+
+  // mat.print()
+  view_i32_vec(mat, mat_size);
+
+  // mat.delete(1)
+  delete_at_i32_vec(&mat, 1, &mat_size);
+
+  // mat.print()
+  view_i32_vec(mat, mat_size);
+
+  // M-dim float
+
+  f64node *vec12 = NULL;
+  int vec12_size = 0;
+  add_f64_node(&vec12, 1, &vec12_size);
+  add_f64_node(&vec12, 2, &vec12_size);
+  add_f64_node(&vec12, 3, &vec12_size);
+
+  f64node *vec22 = NULL;
+  int vec22_size = 0;
+  add_f64_node(&vec22, 4, &vec22_size);
+  add_f64_node(&vec22, 5, &vec22_size);
+  add_f64_node(&vec22, 6, &vec22_size);
+
+  f64node *vec32 = NULL;
+  int vec32_size = 0;
+  add_f64_node(&vec32, 7, &vec32_size);
+  add_f64_node(&vec32, 8, &vec32_size);
+  add_f64_node(&vec32, 9, &vec32_size);
+  add_f64_node(&vec32, 10, &vec32_size);
+
+  f64node *vec42 = NULL;
+  int vec42_size = 0;
+
+  f64vec *mat1 = NULL;
+  int mat1_size = 0;
+  add_f64_vec(&mat1, &vec12, &mat1_size);
+  add_f64_vec(&mat1, &vec22, &mat1_size);
+  add_f64_vec(&mat1, &vec32, &mat1_size);
+  add_f64_vec(&mat1, &vec42, &mat1_size);
+
+  // mat1.print()
+  view_f64_vec(mat1, mat1_size);
+
+  // list2 = mat1.get(2)
+  f64node *list2 = get_f64_vec(mat1, 2);
+  // The compiler should know that list is a mul-dim variable, as few functions differ in list using multi-dims.
+
+  // list2.print()
+  view_f64_node(list2, magnitude_f64_node(&list2));
+
+  // list2.add(20.14)
+  __garbage__ = 0;
+  add_f64_node(&list2, 20.14, &__garbage__);
+
+  // list2.get(1)
+  printf("%f\n", get_f64_node(&list2, 1));
+
+  // mat.size()
+  printf("%d\n", size_f64_vec(mat1_size));
+
+  // mat1.insertAt(1, vec42)
+  insert_at_f64_vec(&mat1, &vec42, 1, &mat1_size);
+
+  // mat.print()
+  view_f64_vec(mat1, mat1_size);
+
+  // mat1.clear()
+  // clear_f64_vec(&mat1, &mat1_size);
+
+  // mat1.print()
+  view_f64_vec(mat1, mat1_size);
+
+  // mat1.pop()
+  pop_f64_vec(&mat1, &mat1_size);
+
+  // mat1.print()
+  view_f64_vec(mat1, mat1_size);
+
+  // mat.delete(1)
+  delete_at_f64_vec(&mat1, 1, &mat1_size);
+
+  // mat.print()
+  view_f64_vec(mat1, mat1_size);
+
+  // M-dim string
+
+  // M-dim float
+
+  ch8node *vec123 = NULL;
+  int vec123_size = 0;
+  add_ch8_node(&vec123, "abc", &vec123_size);
+  add_ch8_node(&vec123, "bcd", &vec123_size);
+  add_ch8_node(&vec123, "cde", &vec123_size);
+
+  ch8node *vec124 = NULL;
+  int vec124_size = 0;
+  add_ch8_node(&vec124, "def", &vec124_size);
+  add_ch8_node(&vec124, "efg", &vec124_size);
+  add_ch8_node(&vec124, "fgh", &vec124_size);
+
+  ch8node *vec125 = NULL;
+  int vec125_size = 0;
+  add_ch8_node(&vec125, "ghi", &vec125_size);
+  add_ch8_node(&vec125, "hij", &vec125_size);
+  add_ch8_node(&vec125, "ijk", &vec125_size);
+  add_ch8_node(&vec125, "jkl", &vec125_size);
+
+  ch8node *vec126 = NULL;
+  int vec126_size = 0;
+
+  ch8vec *mat2 = NULL;
+  int mat2_size = 0;
+  add_ch8_vec(&mat2, &vec123, &mat2_size);
+  add_ch8_vec(&mat2, &vec124, &mat2_size);
+  add_ch8_vec(&mat2, &vec125, &mat2_size);
+  add_ch8_vec(&mat2, &vec126, &mat2_size);
+
+  // mat2.print()
+  view_ch8_vec(mat2, mat2_size);
+
+  // list21 = mat2.get(2)
+  ch8node *list21 = get_ch8_vec(mat2, 2);
+  // The compiler should know that list is a mul-dim variable, as few functions differ in list using multi-dims.
+
+  // list21.print()
+  view_ch8_node(list21, magnitude_ch8_node(&list21));
+
+  // list21.add(20.14)
+  __garbage__ = 0;
+  add_ch8_node(&list21, "20.14", &__garbage__);
+
+  // list2.get(1)
+  printf("%s\n", get_ch8_node(&list21, 1));
+
+  // mat.size()
+  printf("%d\n", size_ch8_vec(mat2_size));
+
+  // mat2.insertAt(1, vec126)
+  insert_at_ch8_vec(&mat2, &vec126, 1, &mat2_size);
+
+  // mat.print()
+  view_ch8_vec(mat2, mat2_size);
+
+  // mat2.clear()
+  // clear_ch8_vec(&mat2, &mat2_size);
+
+  // mat2.print()
+  view_ch8_vec(mat2, mat2_size);
+
+  // mat2.pop()
+  pop_ch8_vec(&mat2, &mat2_size);
+
+  // mat2.print()
+  view_ch8_vec(mat2, mat2_size);
+
+  // mat.delete(1)
+  delete_at_ch8_vec(&mat2, 1, &mat2_size);
+
+  // mat.print()
+  view_ch8_vec(mat2, mat2_size);
 }
