@@ -15,6 +15,7 @@
 #include "./lib/util/hash_map_ch8k_i32v.c"
 #include "./lib/util/hash_map_ch8k_ch8v.c"
 #include "./lib/util/hash_map_ch8k_f64v.c"
+#include "./lib/util/priority_queue_i32.c"
 #include "./lib/util/tree_set_int32.c"
 #include "./lib/util/tree_set_float64.c"
 #include "./lib/util/tree_set_string.c"
@@ -1049,12 +1050,39 @@ void main()
   add_i32_node(&x_list, 222, &x_list_size);
   add_i32_node(&x_list, 333, &x_list_size);
 
-
   // list<int> temp = new list<>()
   i32node *x_list_temp = NULL;
   int x_list_temp_size = 0;
-  
+
   // temp.deepCopy(x_list)
   deep_copy_i32_node(&x_list_temp, &x_list_temp_size, &x_list, &x_list_size);
 
+  // PriorityQueue-API
+  // heap_pq<int> m = new heap_pq<MAX>()
+  pq_i32 *m = (pq_i32 *)malloc(sizeof(pq_i32));
+  int m_heap_order = 1;
+  m->size = 0;
+  // HEAP-Order: 0 is MIN,
+  // HEAP-Order: 1 is MAX
+
+  // m.offer(1)
+  offer_i32_heap(1, &m, m_heap_order);
+  // m.offer(3)
+  offer_i32_heap(3, &m, m_heap_order);
+  // m.offer(2)
+  offer_i32_heap(2, &m, m_heap_order);
+  // m.offer(7)
+  offer_i32_heap(7, &m, m_heap_order);
+  // m.offer(6)
+  offer_i32_heap(6, &m, m_heap_order);
+  // e = m.poll()
+  int E = poll_i32_heap(&m, m_heap_order);
+  printf("%d\n--\n", E);
+
+  // m.offer(16)
+  offer_i32_heap(16, &m, m_heap_order);
+  while ((E = poll_i32_heap(&m, m_heap_order)) != -1)
+  {
+    printf("%d\n", E);
+  }
 }
