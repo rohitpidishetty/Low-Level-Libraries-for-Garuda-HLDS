@@ -39,5 +39,5 @@ The LL-API provides implementations for:
 - Performance-focused with minimal overhead  
 - Modular and extensible architecture  
 - Generic design using low-level abstractions  
-- Built to support a programming language runtime  
+- Built to support a Garuda programming language runtime  
 
