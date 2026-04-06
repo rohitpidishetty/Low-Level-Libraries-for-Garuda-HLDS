@@ -68,7 +68,7 @@ void view_any_list_dtype_node(any_list_dtype *node)
       printf(", ");
     curr = curr->next;
   }
-  printf("]");
+  printf("]\n");
 }
 void main()
 {
@@ -213,6 +213,20 @@ void main()
   any_set_temp_view_size = 0;
   elements_ch8_t_set(&s2, &any_set_temp_view, &any_set_temp_view_size);
   add_any_list_dtype_node(&listOfSet, &listOfSet_magnitude, any_set_temp_view, 0);
+
+  // list<T> E5 = new list<>()
+  ch8node *E5 = NULL;
+  int E5_size = 0;
+
+  // E2.push("Hi")
+  // E2.push("How are you?")
+  add_ch8_node(&E5, "1", &E5_size);
+  add_ch8_node(&E5, "2", &E5_size);
+  add_ch8_node(&E5, "2", &E5_size);
+  add_ch8_node(&E5, "3", &E5_size);
+
+  // g2.push(E2)
+  add_any_list_dtype_node(&listOfSet, &listOfSet_magnitude, E5, 0);
 
   // listOfSet.print()
   view_any_list_dtype_node(listOfSet);
