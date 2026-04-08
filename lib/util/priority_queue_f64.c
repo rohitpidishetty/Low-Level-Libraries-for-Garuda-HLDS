@@ -1,3 +1,21 @@
+/*
+ * Copyright (c) 2026, National Federation for Research in Advanced Computation (NFRAC)
+ *
+ * This file is part of the Garuda Programming Language.
+ *
+ * Garuda is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3
+ * as published by the Free Software Foundation.
+ *
+ * Garuda is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ *
+ * See the GNU General Public License for more details.
+ * https://www.gnu.org/licenses/gpl-3.0.en.html
+ *
+ * Author: Er. P. Rohit V. Acharya
+ */
 #include <stdio.h>
 #include <stdlib.h>
 

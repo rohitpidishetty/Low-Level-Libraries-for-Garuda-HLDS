@@ -25,8 +25,8 @@ Exposed within Garuda as abstract data structures, built on top of the LL-Lib.
 
 The LL-Lib provides implementations for:
 
-- List  
-- Dictionary  
+- List, AnyList
+- Dictionary, AnyDictionary
 - Set  
 - String  
 - Priority Queue  
