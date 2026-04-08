@@ -1,3 +1,4 @@
+![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
 # Garuda HLDS – Low Level Libraries (C Runtime)
 
 Garuda HLDS (High-Level Data Structures) is powered by a **Low-Level Library (LL-Lib)** implemented in **C**, forming the foundational runtime layer for core data structures.
@@ -45,4 +46,3 @@ The LL-Lib provides implementations for:
 
 ## License
 Garuda is licensed under the GNU General Public License v3 (GPL-3.0).
-![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
