@@ -5,7 +5,7 @@ Garuda HLDS (High-Level Data Structures) is powered by a **Low-Level Library (LL
 
 This project focuses on building efficient, memory-controlled, and reusable data structures that serve as the backbone for Garuda’s high-level abstractions.
 
-It is an open-source initiative, aimed at provinding a robust and extensible systems-level foundation for engineers to build performance-critial applications and language runtime components.
+It is an open-source initiative, aimed at providing a robust and extensible systems-level foundation for engineers to build performance-critical applications and language runtime components.
 
 ---
 
